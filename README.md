@@ -3,7 +3,7 @@
 A simple weather app built using **HTML**, **CSS**, and **JavaScript**.  
 It fetches live weather data using the **OpenWeatherMap API**.
 
-## Features
+## ✨ Features
 - Search for weather by city
 - Display temperature, humidity, and wind speed
 - Show the current time, date, and day of the selected city
