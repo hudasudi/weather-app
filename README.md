@@ -18,7 +18,7 @@ Just open `weather.html` in your browser.
 
 ---
 
-## Future Plans
+## 🌟 Future Plans
 - Make the layout responsive for different devices
 - Clean up and organize the code for better readability
 - Improve the accuracy of the weather images to match current conditions more closely
