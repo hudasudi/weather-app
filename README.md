@@ -13,12 +13,12 @@ It fetches live weather data using the **OpenWeatherMap API**.
 
 ---
 
-## 🚀 How to Run
-Just open `weather.html` in your browser.
-
----
-
 ## 🌟 Future Plans
 - Make the layout responsive for different devices
 - Clean up and organize the code for better readability
 - Improve the accuracy of the weather images to match current conditions more closely
+
+---
+
+## 🚀 How to Run
+Just open `weather.html` in your browser.
