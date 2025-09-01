@@ -7,20 +7,19 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <div class="container1">
+ <div class="weather-app">
+  <div class="search-container">
     <div class="search-box">
+      <form>
       <input type="text" placeholder="Enter Location">
-      <button type="button">
-        <img src="images/search.png" alt="Search">
-      </button>
+      </form>
     </div>
     <div class="error">
   <p>Invalid City Name!</p>
 </div>
   </div>
 
-  <div class="container2">
+  <div class="weather-container">
       <h1 class="city">Glasgow</h1>
       <h2 class="temp">30°C</h2>
 
@@ -55,6 +54,7 @@
     <p>Wind: <span class="wind">6.2 km/h</span></p>
        </div>
  </div>
+  </div>
 
   <script src="weather-app.js"></script>
 </body>

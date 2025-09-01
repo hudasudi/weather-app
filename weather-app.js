@@ -7,16 +7,14 @@ const weatherss= document.querySelector(".con");
 const datee = document.querySelector(".date");
 const dayy = document.querySelector(".day");
 const timee = document.querySelector(".time");
+const form = document.querySelector("form");
  
-
 function dateAndTday(timezoneOffSet){
-
   //get current time in UTC 
 const date = new Date(); // now
 const utcTime = date.getTime() + date.getTimezoneOffset() * 60000;
 //add the city's timezone offset
 const cityTime =  new Date(utcTime + timezoneOffSet * 1000);
-
 
 // get the date in DD-MM-YY
 let day = cityTime.getDate();
@@ -32,22 +30,16 @@ dayy.innerHTML = daysofWeek[cityTime.getDay()];
 timee.innerHTML = cityTime.toLocaleString("en-US", {
   hour: '2-digit',
   minute: '2-digit',
-  second: '2-digit',
   hour12: true,
- 
-});
-
- 
-
+}); 
 }
 
 async function checkWeather(city){
 const response = await fetch(apiUrl + city +  `&appid=${apiKey}`);
 
-
 if(response.status == 404){
 document.querySelector(".error").style.display = "block";
-document.querySelector(".container2").style.display = "none";
+document.querySelector(".weather-container").style.display = "none";
 }else{
   var data = await response.json();
 
@@ -87,15 +79,17 @@ weatherss.innerHTML = "Clouds";
   weatherss.innerHTML = "Rain";
 }
 
-
-
-document.querySelector(".container2").style.display = "block";
+document.querySelector(".weather-container").style.display = "block";
 dateAndTday(data.timezone);
 document.querySelector(".error").style.display = "none";
 }
 }
 
-
-searchBtn.addEventListener("click", () => {
-checkWeather(searchBox.value)
+// press enter to get the city weather
+form.addEventListener("submit", function(e){
+  e.preventDefault(); //prevent refreshing
+  checkWeather(searchBox.value)
 })
+// searchBtn.addEventListener("click", () => {
+// checkWeather(searchBox.value)
+// })
